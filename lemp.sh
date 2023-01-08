@@ -27,13 +27,16 @@ debconf-set-selections <<< "mysql-server mysql-server/root_password_again passwo
 apt-get install mysql-server -y
 
 ## Install PHP
-sudo systemctl install php php-fpm php-mysql -y
+sudo systemctl install php-fpm php-mysql -y
 
 ## Install PhpMyAdmin
 sudo apt-get install phpmyadmin -y
 
 # Set Permissions
 sudo chown -R www-data:www-data /var/www
+
+# Link to phpmyadmin
+sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
 
 # Restart Nginx
 sudo systemctl reload nginx

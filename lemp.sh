@@ -32,8 +32,8 @@ sudo systemctl install php php-fpm php-mysql -y
 ## Install PhpMyAdmin
 sudo apt-get install phpmyadmin -y
 
- # Set Permissions
+# Set Permissions
 sudo chown -R www-data:www-data /var/www
 
- # Restart Nginx
+# Restart Nginx
 sudo systemctl reload nginx
